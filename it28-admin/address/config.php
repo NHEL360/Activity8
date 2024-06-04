@@ -1,17 +1,17 @@
 <?php
 // config.php
-
+/*
 $host = 'localhost';
 $dbname = 'licera';
 $username = 'root';
 $password = '';
+*/
 
-/*
 $host = 'localhost';
 $dbname = 'u593341949_db_licera';
 $username = 'u593341949_dev_licera';
 $password = '20201362Licera';
-*/
+
 
 $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
 
