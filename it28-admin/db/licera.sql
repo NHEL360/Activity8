@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2024 at 02:14 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jun 04, 2024 at 03:41 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,9 +43,7 @@ CREATE TABLE `addresses` (
 --
 
 INSERT INTO `addresses` (`address_id`, `street`, `city`, `state`, `zip`, `country`, `created_at`, `payment_id`) VALUES
-(19, 'Calanawan', 'Manolo Fortich, Bukidnon', 'Mindanao', '3232', 'Philippines', '2024-06-02 12:01:44', 0),
-(20, 'Calanawan', 'Manolo Fortich, Bukidnon', 'Mindanao', '3232', 'Philippines', '2024-06-02 12:08:31', 0),
-(21, 'sample', 'sample', 'sample', 'sample', 'sample', '2024-06-02 12:10:32', 0);
+(22, 'PH 1 San Miguel', 'MANOLO FORTICH', 'BUKIDNON', '8703', 'Philippines', '2024-06-04 01:28:05', 0);
 
 -- --------------------------------------------------------
 
@@ -68,8 +66,7 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`payment_id`, `product_name`, `price`, `total`, `payment_method`, `created_at`, `product_id`) VALUES
-(16, 'Isaw', 25.00, 25.00, 'GCash', '2024-06-02 11:29:27', 1),
-(33, 'Isaw', 25.00, 175.00, 'GCash', '2024-06-02 12:08:26', 1);
+(34, 'Apple iPhone 14 Pro', 2000.00, 2000.00, 'GCash', '2024-06-04 01:27:28', 1);
 
 -- --------------------------------------------------------
 
@@ -94,11 +91,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `rrp`, `quantity`, `img`, `date_added`, `user_id`) VALUES
-(1, 'Isaw', 'Grilled chicken or pork intestines marinated in a tangy and spicy sauce.', 20, 25, 50, 'https://www.lasabbq.com/cdn/shop/products/BBQChickenIsaw1.jpg', '2024-05-08 00:00:00', 0),
-(2, 'Balut', 'Fertilized duck embryo boiled and commonly sold as street food in the Philippines.', 15, 20, 30, 'https://facts.net/wp-content/uploads/2020/10/AdobeStock_279704615.jpeg', '2024-05-08 00:00:00', 0),
-(3, 'Kwek-Kwek', 'Quail eggs coated in orange batter and deep-fried, often served with vinegar.', 10, 15, 40, 'https://www.kawalingpinoy.com/wp-content/uploads/2019/07/kwek-kwek-14.jpg', '2024-05-08 00:00:00', 0),
-(4, 'Fish Balls', 'Deep-fried fish balls served with sweet and spicy sauce.', 12, 18, 60, 'https://www.foxyfolksy.com/wp-content/uploads/2021/05/fish-balls.jpg', '2024-05-08 00:00:00', 0),
-(5, 'Taho', 'Silken tofu topped with sweet syrup and tapioca pearls.', 25, 30, 20, 'https://i0.wp.com/iankewks.com/wp-content/uploads/2023/06/IMG_2347.jpg', '2024-05-08 00:00:00', 0);
+(1, 'Apple iPhone 14 Pro', 'The iPhone 14 Pro features a 6.1-inch Super Retina XDR display. A16 Bionic chip and a triple camera system with 12MP Ultra Wide and Telephoto lenses.It offers exceptional performance camera capabilities and a refined iOS experience.', 1500, 2000, 100, 'https://imgs.search.brave.com/t1ygAlw3pKWc1MUDj5wL3qwvWNFbu0hNGS-TAwXDzdk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFjVjFEbm84cEwu/anBn', '2024-05-08 00:00:00', 0),
+(2, 'Samsung Galaxy S23 Ultra', 'The Samsung Galaxy S23 Ultra boasts a 6.8-inch Dynamic AMOLED 2X display with a 120Hz refresh rate Snapdragon 8 Gen 2 processor and a quad camera setup including a 200MP main sensor. It also supports the S Pen and delivers top-tier performance and versatility.', 3000, 4000, 150, 'https://imgs.search.brave.com/mjCQQzBNgf4efZ6YeveHxkb5EOPQgjCI-rAT2BTQcUA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jZG4u/bW9zLmNtcy5mdXR1/cmVjZG4ubmV0L2d4/NTVic3p4V0dHM0FI/Wk1XRGJTU1gtMzIw/LTgwLmpwZw', '2024-05-08 00:00:00', 0),
+(3, 'Google Pixel 7 Pro', 'The Google Pixel 7 Pro features a 6.7-inch LTPO OLED display the Google Tensor G2 processor and a triple camera setup with 50MP main 12MP ultra-wide and 48MP telephoto lenses. Known for its superior camera capabilities and clean Android experience.', 10000, 13000, 200, 'https://imgs.search.brave.com/2o9Hqj9FQQUvSeTdgvzmr1eLYZV0CTU7I3efchqWU3M/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jbGVh/cmJ1eS1jbG91ZC5u/eWMzLmRpZ2l0YWxv/Y2VhbnNwYWNlcy5j/b20vbWVkaWEvNTgy/OS9Hb29nbGUtUGl4/ZWwtNy1Qcm8uanBn', '2024-05-08 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -118,10 +113,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `created_at`) VALUES
-(1, 'admin', '$2y$10$kGp4g1TjBK4XwLIwRbBHSeZ4W5FpPbYoB1ap5NfFUjUPAcE3KR5QG', '2024-04-29 16:39:58'),
-(2, 'arlene', '$2y$10$JbxintLe9rHvRuCGIVZfd.fk943ESa5pITzzXJ6.4bTBsdUj3CqJa', '2024-05-23 23:22:35'),
-(3, 'test1', '$2y$10$.RkUpNRmmXtp0ZGe97ojG.lZjZq8nBuTl60TsXiwq1rVkC/lV/7Xe', '2024-05-30 04:17:31'),
-(4, 'temp', '$2y$10$ptpvm642.ZqY9BZ48qrYy.vO4dsNXmTNN8zXIOus1aSHV8JxyQlGW', '2024-05-30 04:17:50');
+(5, 'Eva', '$2y$10$eEFJ05.E0F2JAQ9D3qnOIeTDLxvaqiA7JG3LmzOVje/kW./m68pTa', '2024-06-04 09:29:21');
 
 --
 -- Indexes for dumped tables
@@ -159,25 +151,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
